@@ -17,11 +17,18 @@ c<template>
           />
         </b-input-group>
       </div>
-      <b-button variant="success" class="mt-2 mb-4">Search</b-button>
+      <b-button
+        variant="success"
+        class="mt-2 mb-4"
+        @click="filterByDate"
+      >
+        Search
+      </b-button>
     </div>
 
     <vue-apex-charts
       v-if="series[0].data"
+      ref="chart"
       type="candlestick"
       height="350"
       :options="chartOptions"
@@ -84,6 +91,20 @@ export default {
           }
         }
       }
+    }
+  },
+  methods: {
+    filterByDate () {
+      const startDate = new Date(this.chartControl.startDate)
+      const endDate = new Date(this.chartControl.endDate)
+
+      this.series[0].data = this.candleStickData.filter((a) => {
+        const date = new Date(a.x)
+
+        return date >= startDate && date <= endDate
+      })
+
+      this.$refs.chart.refresh()
     }
   }
 }
