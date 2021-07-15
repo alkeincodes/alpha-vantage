@@ -1,7 +1,6 @@
-.av-card {
+.card-style {
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
   border: 1px solid $border-color;
   background-color: #fff;
-  padding: $padding;
+  overflow: hidden;
 }

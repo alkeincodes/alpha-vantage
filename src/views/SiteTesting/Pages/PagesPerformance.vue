@@ -28,7 +28,7 @@
           <span class="text-success"><strong>+236</strong> clicks from new keywords containing the phrase '<strong>compare</strong>'</span>
         </div>
       </b-alert>
-      <div class="table-data mt-1">
+      <div class="card-style mt-1 mb-5">
         <b-table
           :busy="isLoading"
           :items="tableData"
@@ -49,6 +49,12 @@
           </template>
         </b-table>
       </div>
+
+      <h4 class="page-subtitle mb-3">Graph: Table Title <icon-fill-share /></h4>
+
+      <div class="card-style">
+        <chart />
+      </div>
     </div>
   </div>
 </template>
@@ -56,12 +62,14 @@
 <script>
 import DataCard from '@/views/SiteTesting/components/DataCard'
 import DateFilters from '@/views/SiteTesting/components/DateFilters'
+import Chart from '@/views/SiteTesting/components/Chart'
 
 export default {
   name: 'PagesPerformance',
   components: {
     DataCard,
-    DateFilters
+    DateFilters,
+    Chart
   },
   computed: {
     dataCards () {

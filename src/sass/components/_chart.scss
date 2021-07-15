@@ -1,0 +1,22 @@
+.av-chart {
+  .chart-date-controls {
+    padding: $padding;
+
+    & > div {
+      @include flexbox(row, center, space-between);
+      .input-group {
+        width: 48%;
+  
+        .b-form-datepicker {
+          padding-left: $padding;
+          & > .btn {
+            position: absolute;
+            svg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

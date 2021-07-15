@@ -56,17 +56,20 @@ const actions = {
       for (const [key, value] of Object.entries(apiData)) {
         const propKey = key
         const dataByProp = []
+        const candleStickData = []
 
         for (const [vKey, vValue] of Object.entries(value)) {
           const rKey = vKey.substring(3)
           dataByProp[rKey] = vValue
+          candleStickData.push(vValue)
         }
         reconData.push({
           date: moment(propKey).format('DD MMMM YYYY'),
-          ...dataByProp
+          ...dataByProp,
+          candleStickData
         })
       }
-      commit('SET_TABLE_DATA', reconData)
+      commit('SET_TABLE_DATA', reconData.sort((a, b) => new Date(a.date) - new Date(b.date)))
       commit('SET_LOADING', false)
     })
   }
@@ -75,7 +78,15 @@ const actions = {
 const getters = {
   dataCard: state => state.dataCard,
   tableData: state => state.tableData,
-  dateFilter: state => state.dateFilter
+  dateFilter: state => state.dateFilter,
+  candleStickData: state => {
+    return state.tableData.map(d => {
+      return {
+        x: d.date,
+        y: d.candleStickData
+      }
+    })
+  }
 }
 
 export default {
