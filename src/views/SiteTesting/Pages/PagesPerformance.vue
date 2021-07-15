@@ -13,29 +13,41 @@
       </div>
     </div>
     <div class="pages-performance__content">
-      <b-row>
+      <b-row class="mb-5">
         <b-col v-for="(data, key) in dataCards" :key="key">
           <data-card :data="data" />
         </b-col>
       </b-row>
-
-      <div class="data-table mt-4">
-        <b-alert
-          show
-          dismissible
-        >
-          <div class="alert-with-icon">
-            <icon-graduation-hat />
-            <span class="text-success"><strong>+236</strong> clicks from new keywords containing the phrase '<strong>compare</strong>'</span>
-          </div>
-        </b-alert>
+      <h4 class="page-subtitle mb-3">Table Title <icon-fill-share /></h4>
+      <b-alert
+        show
+        dismissible
+      >
+        <div class="alert-with-icon">
+          <icon-graduation-hat />
+          <span class="text-success"><strong>+236</strong> clicks from new keywords containing the phrase '<strong>compare</strong>'</span>
+        </div>
+      </b-alert>
+      <div class="table-data mt-1">
         <b-table
+          :busy="isLoading"
           :items="tableData"
           :fields="fields"
           striped
           sticky-header
           hover
-        />
+        >
+          <template #cell(date)="prop">
+            <!-- `data.value` is the value after formatted by the Formatter -->
+            <span class="date">{{ prop.value }}</span>
+          </template>
+          <template #table-busy>
+            <div class="text-center text-danger my-2">
+              <!-- <b-spinner class="align-middle"></b-spinner> -->
+              <strong>Loading...</strong>
+            </div>
+          </template>
+        </b-table>
       </div>
     </div>
   </div>
@@ -57,6 +69,9 @@ export default {
     },
     tableData () {
       return this.$store.getters['SiteTesting/tableData']
+    },
+    isLoading () {
+      return this.$store.getters['SiteTesting/isLoading']
     }
   },
   data () {
@@ -86,8 +101,8 @@ export default {
       ]
     }
   },
-  created () {
-    this.$store.dispatch('SiteTesting/getApiData')
+  async created () {
+    await this.$store.dispatch('SiteTesting/getApiData')
   }
 }
 </script>

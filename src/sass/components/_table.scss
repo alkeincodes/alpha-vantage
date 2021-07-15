@@ -1,5 +1,6 @@
 .b-table {
   font-family: 'Poppins', sans-serif;
+  color: $text-main-color !important;
 
   th {
     div {
@@ -10,4 +11,22 @@
       display: none;
     }
   }
+
+  .date {
+    color: #A3A3A3;
+  }
+}
+
+.table-striped > tbody > tr {
+  background-color: #fff;
+  &:nth-of-type(odd) {
+    background-color: #fafbff;
+  }
+}
+
+.table-data {
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+  background-color: #fff;
+  overflow: hidden;
 }
