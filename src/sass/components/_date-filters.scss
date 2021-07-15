@@ -1,0 +1,40 @@
+.date-filters {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: #fff;
+  width: 205px;
+  font-family: 'Manrope', sans-serif;
+  font-size: $font-xs;
+  color: $primary;
+
+  &__header {
+    @include flexbox(row, center, initial);
+    border-bottom: 1px solid $border-color;
+    padding: $padding;
+
+    svg {
+      margin-right: $margin;
+    }
+  }
+
+  &__controls {
+    .date-controls {
+      padding: $padding / 2 $padding;
+      user-select: none;
+      color: $secondary;
+      span {
+        display: inline-block;
+        padding: $padding / 4 $padding;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-transform: capitalize;
+
+        &.active {
+          color: $brand-main;
+          border-color: $brand-main;
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}

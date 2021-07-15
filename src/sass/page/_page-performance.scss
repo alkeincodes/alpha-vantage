@@ -1,0 +1,14 @@
+.pages-performance {
+  &__header {
+    margin-bottom: $margin * 4;
+    @include flexbox(row, flex-start, space-between);
+    a.learn-more {
+      font-family: 'Manrope', sans-serif;
+      @include flexbox(row, center, initial);
+
+      svg {
+        margin-right: $margin;
+      }
+    }
+  }
+}

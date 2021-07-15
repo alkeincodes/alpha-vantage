@@ -1,0 +1,28 @@
+.data-card {
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #fff;
+  padding: $padding $padding * 2;
+  font-family: 'Poppins', sans-serif;
+
+  .figure {
+    color: $text-main-color;
+    font-size: 20px;
+  }
+
+  .info {
+    color: #696868;
+    font-weight: 500;
+    margin-bottom: 0;
+    font-size: $font-xs - 1;
+    .percentage {
+      &.increased {
+        color: $success;
+      }
+      &.decreased {
+        color: $danger;
+      }
+    }
+  }
+}
