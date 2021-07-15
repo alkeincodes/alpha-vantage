@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-};
+  name: 'App'
+}
 </script>
 
 <style lang="scss">
-@import "@/sass/app.scss";
+@import '@/sass/app.scss';
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
