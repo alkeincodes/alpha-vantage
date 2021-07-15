@@ -6,10 +6,15 @@
     div {
       color: $text-main-color;
       font-size: $font-xs;
+      padding-inline: $padding !important;
     }
     span.sr-only {
       display: none;
     }
+  }
+
+  td {
+    padding-inline: $padding * 2 !important;
   }
 
   .date {
@@ -19,7 +24,9 @@
 
 .table-striped > tbody > tr {
   background-color: #fff;
+  border-color: transparent;
   &:nth-of-type(odd) {
+    --bs-table-accent-bg: unset !important;
     background-color: #fafbff;
   }
 }
