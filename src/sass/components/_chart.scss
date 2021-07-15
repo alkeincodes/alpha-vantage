@@ -20,3 +20,17 @@
     }
   }
 }
+
+
+@media screen and (max-width: 425px) {
+  .av-chart {
+    .chart-date-controls {
+      & > div {
+        flex-direction: column;
+        .input-group {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 <template>
   <div class="site-header">
+    <div class="nav-control">
+      <button @click="$store.commit('common/TOGGLE_SIDENAV')"><b-icon-arrow-left /></button>
+    </div>
     <b-dropdown
       size="lg"
       variant="link"
@@ -26,7 +29,12 @@
 </template>
 
 <script>
+import { BIconArrowLeft } from 'bootstrap-vue'
+
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  components: {
+    BIconArrowLeft
+  }
 }
 </script>

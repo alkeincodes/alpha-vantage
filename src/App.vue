@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    <div class="main-container">
-      <div class="sidenav">
+    <div
+      class="dashboard"
+      :class="{'sidenav-open': $store.getters['common/isSidenavOpen']}"
+    >
+      <div class="dashboard__left">
         <side-nav />
       </div>
-      <div class="site-content">
+      <div class="dashboard__right">
         <app-header />
-        <router-view></router-view>
+        <div class="site-main">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
   </div>

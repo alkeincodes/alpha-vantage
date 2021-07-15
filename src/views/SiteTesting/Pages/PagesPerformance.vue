@@ -14,7 +14,12 @@
     </div>
     <div class="pages-performance__content">
       <b-row class="mb-5">
-        <b-col v-for="(data, key) in dataCards" :key="key">
+        <b-col
+          v-for="(data, key) in dataCards"
+          :key="key"
+          class="mb-3"
+          lg
+        >
           <data-card :data="data" />
         </b-col>
       </b-row>
@@ -33,8 +38,9 @@
           :busy="isLoading"
           :items="tableData"
           :fields="fields"
-          striped
           sticky-header
+          responsive
+          striped
           hover
         >
           <template #cell(date)="prop">

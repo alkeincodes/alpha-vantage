@@ -17,5 +17,5 @@ a {
 @import 'components/all';
 
 body {
-  @include flexbox(row, center, center);
+  background-color: $bg-color !important;
 }

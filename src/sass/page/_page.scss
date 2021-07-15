@@ -1,19 +1,35 @@
+
 #app {
-  width: 100%;
+  // width: 100%;
+  background-color: $bg-color;
 }
 
 .av-container {
   padding: $padding * 2 !important;
 }
 
-.main-container {
-  display: grid;
-  grid-template-columns: 15% 1fr;
-  background-color: $bg-color;
+.dashboard {
+  @include flexbox(row, initial, initial);
   height: 100%;
+  transition: all 0.3s ease;
 
-  .sidenav {
+  &__left {
     background-color: #2C2C4A;
+    width: $sidenav-width;
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  &__right {
+    flex: 1;
+    .site-main {
+      padding-top: 60px;
+      padding-left: $sidenav-width;
+      transition: all 0.3s ease;
+    }
   }
 }
 
@@ -29,6 +45,40 @@
 
     svg {
       margin-left: $margin;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-control {
+    button {
+      display: block !important;
+    }
+  }
+  .dashboard {
+    &__left {
+      width: 0;
+    }
+
+    .site-main {
+      padding-left: 0;
+    }
+
+    &.sidenav-open {
+      .dashboard {
+        &__left {
+          width: $sidenav-width;
+        }
+        &__right {
+          .site-header {
+            .nav-control {
+              margin-left: $sidenav-width !important;
+              transform: scaleX(-1)
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,12 +1,30 @@
 .site-header {
-  @include flexbox(row, center, flex-end);
+  @include flexbox(row, center, space-between);
   padding: $padding $padding * 2;
   background-color: #fff;
   box-shadow: $box-shadow;
   height: 62px;
+  position: fixed;
+  width: 100%;
+  z-index: 90;
+  top: 0;
+  left: 0;
 
   .btn-check:focus + .btn, .btn:focus {
     box-shadow: none;
+  }
+
+  .nav-control {
+    font-size: 24px;
+    transition: all 0.3s ease;
+
+    button {
+      display: none;
+      outline: none;
+      background-color: transparent;
+      border: none;
+      transition: all 0.3s ease;
+    }
   }
 
   .user-info {
