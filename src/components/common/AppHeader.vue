@@ -4,9 +4,19 @@
       size="lg"
       variant="link"
       toggle-class="text-decoration-none"
-      no-caret>
+      no-caret
+      right
+    >
       <template #button-content>
-        &#x1f50d;<span class="sr-only">Search</span>
+        <div class="user-info">
+          <div class="name">
+            <span>John Doe</span>
+            <icon-chevron-down />
+          </div>
+          <div class="settings">
+            <icon-settings /> <span>Settings</span>
+          </div>
+        </div>
       </template>
       <b-dropdown-item href="#">Action</b-dropdown-item>
       <b-dropdown-item href="#">Another action</b-dropdown-item>
@@ -17,6 +27,6 @@
 
 <script>
 export default {
-  name: "AppHeader"
+  name: 'AppHeader'
 }
 </script>

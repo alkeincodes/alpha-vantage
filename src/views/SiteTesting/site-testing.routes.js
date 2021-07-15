@@ -5,7 +5,7 @@ export default [
     component: () => import('@/views/SiteTesting/Index'),
     children: [
       {
-        path: '/site-audit',
+        path: '',
         component: () => import('@/views/BlankPage'),
         meta: { title: 'Site Audit' }
       },

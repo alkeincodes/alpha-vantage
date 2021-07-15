@@ -7,7 +7,11 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    ...SiteTesting
+    ...SiteTesting,
+    {
+      path: '*',
+      component: () => import('@/views/404')
+    }
   ]
 })
 console.log('@router: ', router.options.routes)

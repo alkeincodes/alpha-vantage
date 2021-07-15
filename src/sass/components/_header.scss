@@ -1,0 +1,29 @@
+.site-header {
+  @include flexbox(row, center, flex-end);
+  padding: $padding $padding * 2;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  height: 62px;
+
+  .btn-check:focus + .btn, .btn:focus {
+    box-shadow: none;
+  }
+
+  .user-info {
+    font-family: 'Montserrat', sans-serif;
+    color: #2C2C4A;
+    .name {
+      font-size: $font-xs;
+      svg {
+        margin-left: $margin;
+      }
+    }
+    
+    .settings {
+      @include flexbox(row, center, initial);
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,24 +1,28 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="main-container">
+      <div class="sidenav">
+        SideNav
+      </div>
+      <div class="site-content">
+        <app-header />
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import AppHeader from '@/components/common/AppHeader'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppHeader
+  }
 }
 </script>
 
 <style lang="scss">
 @import '@/sass/app.scss';
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
