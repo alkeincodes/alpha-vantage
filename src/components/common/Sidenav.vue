@@ -31,7 +31,7 @@
               <span>{{ route.meta.title }}</span>
               <icon-chevron-down />
             </div>
-            <b-collapse :id="`accordion-${key+1}`" :visible="key+1 == 1 ? true : false" accordion="my-accordion" role="tabpanel">
+            <b-collapse :id="`accordion-${key+1}`"  :visible="route.children.find(({ path }) => path === $route.path.substring(1)) ? true : false" accordion="my-accordion" role="tabpanel">
                <ul v-if="route.children">
                  <li v-for="child in route.children" :key="child.id">
                    <router-link :to="child.path">{{ child.meta.title }}</router-link>
@@ -54,7 +54,10 @@ export default {
     }
   },
   created () {
-    console.log('Routers: ', this.$router)
+    this.$nextTick(() => {
+      console.log('router: ', this.$router)
+      console.log('route: ', this.$route)
+    })
   }
 }
 </script>

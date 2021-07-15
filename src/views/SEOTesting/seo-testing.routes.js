@@ -1,6 +1,6 @@
 export default [
   {
-    path: '#',
+    path: '/seo-testing',
     name: 'SEOTesting',
     meta: { title: 'SEO Testing' },
     children: [

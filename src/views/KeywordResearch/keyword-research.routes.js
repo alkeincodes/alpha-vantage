@@ -1,6 +1,6 @@
 export default [
   {
-    path: '#',
+    path: '/keyword-search',
     name: 'KeywordResearch',
     meta: { title: 'Keyword Research' },
     children: [
