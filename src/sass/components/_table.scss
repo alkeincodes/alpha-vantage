@@ -1,0 +1,13 @@
+.b-table {
+  font-family: 'Poppins', sans-serif;
+
+  th {
+    div {
+      color: $text-main-color;
+      font-size: $font-xs;
+    }
+    span.sr-only {
+      display: none;
+    }
+  }
+}
