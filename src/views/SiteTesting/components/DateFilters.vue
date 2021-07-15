@@ -8,11 +8,11 @@
       <nav class="date-controls">
         <span
           v-for="item in filters"
-          :key="item"
-          @click="activeName = item"
-          :class="{'active': activeName === item}"
+          :key="item.key"
+          @click="$store.commit('SiteTesting/SET_DATE_FILTER', item.key)"
+          :class="{'active': dateFilter === item.key}"
         >
-          {{ item }}
+          {{ item.label }}
         </span>
       </nav>
     </div>
@@ -22,14 +22,30 @@
 <script>
 export default {
   name: 'DateFilters',
+  computed: {
+    dateFilter () {
+      return this.$store.getters['SiteTesting/dateFilter']
+    }
+  },
   data () {
     return {
-      activeName: 'month',
       filters: [
-        'day',
-        'week',
-        'month',
-        'year'
+        {
+          key: 'daily',
+          label: 'Day'
+        },
+        {
+          key: 'weekly',
+          label: 'Week'
+        },
+        {
+          key: 'monthly',
+          label: 'Month'
+        },
+        {
+          key: 'yearly',
+          label: 'Year'
+        }
       ]
     }
   }
