@@ -1,0 +1,58 @@
+.side-nav {
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+
+  .nav-links {
+    background-color: #E2EDFC;
+
+    &__item {
+      color: $primary;
+      padding: $padding $padding * 3;
+      @include flexbox(row, center, space-between);
+      border-top: 2px solid #2C2C4A;
+      
+      span {
+        display: block;
+        font-size: $font-sm + 2;
+        font-weight: bold;
+      }
+
+      svg {
+        width: 14px;
+        height: 8px;
+      }
+    }
+
+
+    .collapse {
+      ul {
+        li {
+          list-style-type: none;
+          padding: $padding $padding * 2;
+
+          a {
+            text-decoration: none;
+            color: #727374;
+            font-size: $font-sm;
+            position: relative;
+
+            &.router-link-active {
+              color: $primary;
+              font-weight: bold;
+
+              &:before {
+                content: '.';
+                width: 4px;
+                background-color: #0F56B3;
+                left: -11px;
+                top: -1px;
+                color: #0F56B3;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

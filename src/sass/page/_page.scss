@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+.av-container {
+  padding: $padding * 2 !important;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 15% 1fr;
@@ -12,4 +16,10 @@
   .sidenav {
     background-color: #2C2C4A;
   }
+}
+
+.page-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }

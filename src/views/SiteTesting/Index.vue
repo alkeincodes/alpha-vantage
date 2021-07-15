@@ -1,6 +1,6 @@
 <template>
   <div class="site-testing">
-    <h1>Site Testing</h1>
+    <router-view></router-view>
   </div>
 </template>
 <script>
