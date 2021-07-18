@@ -1,5 +1,8 @@
 # alphavantage
 
+## To test the project
+run `npm install` then `npm run dev`
+
 ## File Structure
 
 1. Used SCSS to speedup my coding process in writing CSS and created global variables (`_variables.scss`). I practiced myself doing it this way in case the team decide to change the Project Theme.
