@@ -1,7 +1,7 @@
 # alphavantage
 
 ## To test the project
-run `npm install` then `npm run dev`
+run `npm install` then `npm run serve`
 
 ## File Structure
 
